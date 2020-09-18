@@ -14,11 +14,6 @@
     <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
-
-    <PublishTrimmed>true</PublishTrimmed>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <PublishSingleFile>true</PublishSingleFile>
-    <DebugType>None</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

@@ -6,7 +6,7 @@
 # gets compiled to a, image. It isn't before we run this image, we have a container.
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 WORKDIR /
-COPY /HelloWorld /HelloWorld
+COPY . /HelloWorld
 WORKDIR /HelloWorld
 RUN dotnet publish -c release -o /app
 WORKDIR /app

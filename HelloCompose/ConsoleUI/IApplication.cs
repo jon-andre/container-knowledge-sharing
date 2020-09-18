@@ -1,7 +1,7 @@
 ﻿namespace ConsoleUI
 {
-    public interface IApplication
-    {
-        void Run();
-    }
+  public interface IApplication
+  {
+    void Run();
+  }
 }

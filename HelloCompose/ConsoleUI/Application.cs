@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace ConsoleUI
 {
-    public class Application : IApplication
+  public class Application : IApplication
+  {
+    IBusinessLogic _businessLogic;
+
+    public Application(IBusinessLogic businessLogic)
     {
-        IBusinessLogic _businessLogic;
-
-        public Application(IBusinessLogic businessLogic)
-        {
-            _businessLogic = businessLogic;
-        }
-
-        public void Run()
-        {
-            _businessLogic.ProcessData();
-        }
+      _businessLogic = businessLogic;
     }
+
+    public void Run()
+    {
+      _businessLogic.ProcessData();
+    }
+  }
 }

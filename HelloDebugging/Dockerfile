@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 WORKDIR /
-COPY /HelloWorld /HelloWorld
-WORKDIR /HelloWorld
+COPY . /HelloDebugging
+WORKDIR /HelloDebugging
 RUN dotnet publish -c release -o /app
 WORKDIR /
 

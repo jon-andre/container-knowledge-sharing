@@ -1,16 +1,9 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine AS build-machine
 WORKDIR /
-RUN mkdir HelloWorld
-#COPY /HelloWorld/*.csproj /HelloWorld
-#WORKDIR /HelloWorld
-#RUN dotnet restore
-COPY /HelloWorld /HelloWorld
+
+COPY . /HelloWorld
 WORKDIR /HelloWorld
-# So here is another tip on how to optimize your containers. But this is more related to
-# .NET Core than Docker. Instead of building our code for a bunch of platforms we only
-# build it for linux-musl-x64. This means our code won't be multiplatform, but who cares?
-# We know that our code only will run on Alpine anyway! We also tell dotnet to remove unused
-# dependencies.
+
 RUN dotnet publish \ 
     -c release \ 
     -o /app \ 

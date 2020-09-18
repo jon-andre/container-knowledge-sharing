@@ -1,7 +1,7 @@
 ﻿namespace DemoLibrary
 {
-    public interface IBusinessLogic
-    {
-        void ProcessData();
-    }
+  public interface IBusinessLogic
+  {
+    void ProcessData();
+  }
 }
