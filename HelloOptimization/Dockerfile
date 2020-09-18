@@ -7,13 +7,14 @@ WORKDIR /
 COPY . /HelloOptimization
 WORKDIR /HelloOptimization
 
-RUN dotnet publish -c release -o /app
+#RUN dotnet publish -c release -o /app
 
-# Here we create a new container. Since these two containers are a part of the same 
-# Dockerfile the result of our docker build command, will only be the last image though. 
+RUN dotnet publish -c release -o /app 
+
+
+# To avoid being proven a point you can use .
+# FROM mcr.microsoft.com/dotnet/core/runtime:3.1.8-alpine3.12 AS runtime-machine
 FROM alpine:3.12 as runtime-machine
-# The --from option tells Docker that this specific COPY should copy from the container
-# build-machine and NOT our local machine (i.e your Windows/Mac)
 COPY --from=build-machine /app /app
 
 WORKDIR /app
