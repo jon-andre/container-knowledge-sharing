@@ -12,3 +12,6 @@ Introduces multi-stage builds and shows how we use them to make our images small
 
 ## HelloAgainOptimization
 Shows how to fix the errors from HelloOptimization and also introduces a slightly more advanced 'dotnet publish' command that suits containers better than the vanilla 'dotnet publish' command.
+
+## HelloCompose
+A simple application that reads and writes from a database: Docker Compose is used to start a database and initilize it with Flyway.
