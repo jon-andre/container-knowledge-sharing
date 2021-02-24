@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  myapp:
+    build: ./DemoApplication
+    depends_on:
+      - "flyway"
+  flyway:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://host.docker.internal/ -user=postgres -password=myPassword -connectRetries=60 migrate
+    volumes:
+      - ./DemoApplication/DemoLibrary/db_scripts:/flyway/sql
+    depends_on:
+      - "postgres"
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=myPassword
+      ##- POSTGRES_USER=myUser
+      ##- POSTGRES_DB=myDatabase
